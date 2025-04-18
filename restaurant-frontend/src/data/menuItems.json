@@ -1,0 +1,108 @@
+[
+    {
+      "id": 1,
+      "name": "T-Rex Ribs",
+      "description": "Massive smoked beef ribs glazed with volcanic chili sauce, served with prehistoric slaw",
+      "price": 28.99,
+      "category": "Carnivore Specials",
+      "image": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1530&q=80",
+      "isVeg": false,
+      "isVegan": false,
+      "isBestSeller": true,
+      "isCarnivoreSpecial": true,
+      "spiceLevel": "Hot"
+    },
+    {
+      "id": 2,
+      "name": "Brontosaurus Leaf Wrap",
+      "description": "Giant collard greens stuffed with quinoa, ancient grains, and roasted vegetables",
+      "price": 18.50,
+      "category": "Herbivore Selection",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80",
+      "isVeg": true,
+      "isVegan": true,
+      "spiceLevel": "Mild"
+    },
+    {
+      "id": 3,
+      "name": "Velociraptor Claw Wings",
+      "description": "Crispy chicken wings with triple-threat jurassic jerk seasoning",
+      "price": 14.99,
+      "category": "Primordial Appetizers",
+      "image": "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1680&q=80",
+      "isVeg": false,
+      "isBestSeller": true,
+      "spiceLevel": "Medium"
+    },
+    {
+      "id": 4,
+      "name": "Amber Ale Braised Mammoth",
+      "description": "Slow-cooked brisket in our signature amber ale reduction",
+      "price": 32.99,
+      "category": "Carnivore Specials",
+      "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1371&q=80",
+      "isVeg": false,
+      "isCarnivoreSpecial": true,
+      "spiceLevel": "Mild"
+    },
+    {
+      "id": 5,
+      "name": "Pterodactyl Egg Nest",
+      "description": "Crispy potato nest with avocado, heirloom tomatoes, and poached eggs",
+      "price": 16.75,
+      "category": "Primordial Appetizers",
+      "image": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80",
+      "isVeg": true,
+      "spiceLevel": "Mild"
+    },
+    {
+      "id": 6,
+      "name": "Lava Flow Margarita",
+      "description": "Tequila infused with habanero, blood orange, and black lava salt rim",
+      "price": 12.99,
+      "category": "Volcanic Drinks",
+      "image": "https://images.unsplash.com/photo-1551751299-1b51cab2694c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1654&q=80",
+      "spiceLevel": "Volcanic"
+    },
+    {
+      "id": 7,
+      "name": "Sabertooth Steak",
+      "description": "42oz tomahawk ribeye with bone marrow butter and meteorite rub",
+      "price": 49.99,
+      "category": "Carnivore Specials",
+      "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+      "isVeg": false,
+      "isCarnivoreSpecial": true,
+      "isBestSeller": true
+    },
+    {
+      "id": 8,
+      "name": "Fossilized Chocolate Lava",
+      "description": "Molten chocolate cake with edible amber shards and vanilla ice cream",
+      "price": 11.50,
+      "category": "Stone Age Desserts",
+      "image": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80",
+      "isVeg": true
+    },
+    {
+      "id": 9,
+      "name": "Triceratops Trio Sliders",
+      "description": "Mini brioche buns with wagyu beef, pulled pork, and fried chicken",
+      "price": 19.99,
+      "category": "Primordial Appetizers",
+      "image": "https://images.unsplash.com/photo-1586816001966-79b736744398?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+      "isVeg": false,
+      "spiceLevel": "Medium"
+    },
+    {
+      "id": 10,
+      "name": "Jurassic Park Salad",
+      "description": "Foraged greens with edible flowers, berries, and raptor egg vinaigrette",
+      "price": 15.25,
+      "category": "Herbivore Selection",
+      "image": "https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80",
+      "isVeg": true,
+      "isVegan": true,
+      "isBestSeller": true
+    }
+  ]
