@@ -90,7 +90,7 @@ export default function Menu() {
   };
 
   const handleAddToCart = async (cartItem: MenuItem & { quantity: number }) => {
-    console.log("Added to cart:", cartItem);
+    console.log("Added to cart:", cartItem);``
     await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate async
   };
 

@@ -254,16 +254,7 @@ export default function MenuCard({
           </button>
 
           {/* Quick Add Button */}
-          <button
-            onClick={handleQuickAdd}
-            className={`font-semibold py-3 px-4 rounded-xl shadow-sm transition-all transform hover:scale-105 active:scale-95 disabled:opacity-50 ${
-              theme === 'prehistoric' ? 'bg-amber-900/50 hover:bg-amber-900 text-amber-200' : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
-            }`}
-            disabled={isAdding}
-            aria-label={`Quick add one ${item.name} to cart`}
-          >
-            {quickAddButtonLabel || 'Quick Add'}
-          </button>
+          
         </div>
       </div>
     </div>

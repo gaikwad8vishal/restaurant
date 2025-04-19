@@ -36,17 +36,17 @@ const featuredDishes = [
 // Hero slider images
 const sliderImages: { url: string; alt: string; caption: string }[] = [
     {
-      url: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      url: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg',
       alt: 'Cozy Restaurant Interior',
       caption: 'Step into the Prehistoric Grill & Bar Experience',
     },
     {
-      url: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      url: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg',
       alt: 'Grilled Steak Dish',
       caption: 'Indulge in Our Signature T-Rex Steak',
     },
     {
-      url: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      url: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg',
       alt: 'Elegant Dining Setup',
       caption: 'Dine Like a Dinosaur with Our Cretaceous Feast',
     },
@@ -133,6 +133,8 @@ export function Home() {
       className="relative min-h-screen overflow-hidden font-[Cinzel] bg-black"
       onMouseMove={handleMouseMove}
     >
+
+        
       {/* Cursor Trails */}
       {cursorTrails.map((trail) => (
         <motion.div
@@ -142,7 +144,7 @@ export function Home() {
           animate={{ opacity: 0, scale: 2 }}
           transition={{ duration: 0.8 }}
         >
-          🌿
+          
         </motion.div>
       ))}
 
@@ -197,22 +199,22 @@ export function Home() {
         </AnimatePresence>
         {/* Slider Controls */}
         <motion.button
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setCurrentHeroSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length)}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-amber-600 text-black p-3 rounded-full z-10 shadow-lg"
-          aria-label="Previous slide"
-        >
-          <FiArrowLeft size={24} />
-        </motion.button>
-        <motion.button
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setCurrentHeroSlide((prev) => (prev + 1) % sliderImages.length)}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-amber-600 text-black p-3 rounded-full z-10 shadow-lg"
-          aria-label="Next slide"
-        >
-          <FiArrowRight size={24} />
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setCurrentHeroSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length)}
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-amber-600 text-black p-3 rounded-full z-10 shadow-lg"
+            aria-label="Previous slide"
+            >
+            <FiArrowLeft size={24} />
+            </motion.button>
+            <motion.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setCurrentHeroSlide((prev) => (prev + 1) % sliderImages.length)}
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-amber-600 text-black p-3 rounded-full z-10 shadow-lg"
+            aria-label="Next slide"
+            >
+            <FiArrowRight size={24} />
         </motion.button>
         {/* Navigation Dots */}
         <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-10">
