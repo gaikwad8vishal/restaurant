@@ -89,9 +89,9 @@ export default function Footer() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <p>123 Dino Lane, Jurassic City</p>
+              <p>123, shamshan nagar</p>
               <p>Emergency: +1-800-DINO-HELP</p>
-              <p>Email: info@prehistoricgrill.com</p>
+              <p>Email: info@shamshan.com</p>
               <p className="mt-2 text-xs text-amber-600">*Electric fences active 24/7</p>
             </motion.address>
           </div>

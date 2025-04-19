@@ -65,6 +65,17 @@ export function Home() {
   >([]);
   const trailIdRef = useRef(0);
 
+
+
+
+    // fixes the issue of autopage by history
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+
+
+
   // Auto-rotate hero slider
   useEffect(() => {
     const interval = setInterval(() => {

@@ -1,8 +1,18 @@
 
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function About() {
+
+
+
+// fixes the issue of autopage by history
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+
   return (
     <section className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-amber-100 py-16 relative overflow-hidden">
       {/* Fog Effect */}

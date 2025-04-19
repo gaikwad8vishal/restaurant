@@ -89,11 +89,22 @@ export default function Menu() {
     });
   };
 
+
+
+  
   const handleAddToCart = async (cartItem: MenuItem & { quantity: number }) => {
     console.log("Added to cart:", cartItem);``
     await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate async
   };
 
+
+
+  // fixes the issue of autopage by history
+  useEffect(() => {
+    window.scrollTo(0, 0);
+}, []);
+
+    // Scroll event to show/hide Back to Top button and Filters
   useEffect(() => {
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 300);

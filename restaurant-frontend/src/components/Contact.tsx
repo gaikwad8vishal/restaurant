@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -16,6 +16,16 @@ export default function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+
+
+
+
+  // fixes the issue of autopage by history
+      useEffect(() => {
+          window.scrollTo(0, 0);
+      }, []);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -193,9 +203,9 @@ export default function Contact() {
                 JURASSIC OUTPOST
               </h2>
               <address className="text-amber-200/80 not-italic space-y-2">
-                <p>123 Dino Lane, Jurassic City</p>
+                <p>123, shamshan nagar</p>
                 <p>Emergency: +1-800-DINO-HELP</p>
-                <p>Email: info@prehistoricgrill.com</p>
+                <p>Email: info@shamshan.com</p>
                 <p className="mt-4 text-xs text-amber-600 animate-pulse">
                   *Beware of roaming raptors. Electric fences active 24/7
                 </p>
