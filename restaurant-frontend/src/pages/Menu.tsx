@@ -4,19 +4,6 @@ import { FiSearch, FiArrowUp } from "react-icons/fi";
 import MenuCard from "../components/menu/MenuCard";
 import menuItems from "../data/menuItems.json";
 
-interface MenuItem {
-  id: number | string;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  image: string;
-  isVeg?: boolean;
-  isVegan?: boolean;
-  isBestSeller?: boolean;
-  spiceLevel?: "Mild" | "Medium" | "Hot" | "Volcanic";
-  isCarnivoreSpecial?: boolean;
-}
 
 interface FilterOptions {
   category: string;
@@ -49,13 +36,24 @@ export default function Menu() {
   const spiceLevels = ["Mild", "Medium", "Hot", "Volcanic"];
   const specialOptions = ["Dino Bones", "Meteor Impact", "Fossil Find"];
 
+
+  const validatedSpiceLevel = (
+    spiceLevel: string | undefined
+  ): "Mild" | "Medium" | "Hot" | "Volcanic" | undefined => {
+    const allowedSpiceLevels = ["Mild", "Medium", "Hot", "Volcanic"] as const;
+    return allowedSpiceLevels.includes(spiceLevel as any)
+      ? (spiceLevel as "Mild" | "Medium" | "Hot" | "Volcanic")
+      : undefined;
+  };
+  
+  
+
   const filteredItems = menuItems.filter((item) => {
     const categoryMatch = filters.category === "All" || item.category === filters.category;
     const dietaryMatch =
       filters.dietary.length === 0 ||
       (filters.dietary.includes("Vegetarian") && item.isVeg) ||
-      (filters.dietary.includes("Vegan") && item.isVegan) ||
-      (filters.dietary.includes("Gluten-Free") && item.dietaryTags?.includes("Gluten-Free"));
+      (filters.dietary.includes("Vegan") && item.isVegan) 
     const spiceMatch =
       filters.spiceLevel.length === 0 ||
       (item.spiceLevel && filters.spiceLevel.includes(item.spiceLevel));
@@ -92,7 +90,19 @@ export default function Menu() {
 
 
   
-  const handleAddToCart = async (cartItem: MenuItem & { quantity: number }) => {
+  const handleAddToCart = async (cartItem: {
+    quantity: number;
+    image: string;
+    name: string;
+    spiceLevel?: string;
+    description: string;
+    price: number;
+    category: string;
+    isVeg: boolean;
+    isVegan: boolean;
+    isBestSeller: boolean;
+    dietaryTags?: string[];
+  }) => {
     console.log("Added to cart:", cartItem);``
     await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate async
   };
@@ -292,19 +302,22 @@ export default function Menu() {
             >
               {filteredItems.map((item, index) => (
                 <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                    key={item.id}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <MenuCard
-                    item={item}
+                    <MenuCard
+                    item={{
+                        ...item,
+                        spiceLevel: validatedSpiceLevel(item.spiceLevel),
+                    }}
                     onAddToCart={handleAddToCart}
                     theme="prehistoric"
                     className="border-amber-600/30 hover:border-amber-500 transition-all"
-                  />
+                    />
                 </motion.div>
-              ))}
+                ))}
             </motion.div>
           ) : (
             <motion.div

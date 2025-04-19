@@ -1,7 +1,36 @@
 import { useState } from 'react';
 import { FiPlus, FiMinus, FiShoppingCart, FiInfo } from 'react-icons/fi';
 import { FaPepperHot } from 'react-icons/fa';
-import { MenuCardProps } from './types/menu';
+
+
+
+
+
+
+interface MenuCardProps {
+  item: {
+    image?: string; // URL of the item's image
+    name?: string; // Name of the menu item
+    spiceLevel?: string;
+    description?: string; // Description of the menu item
+    price: number; // Price of the menu item
+    category?: string; // Category of the menu item
+    isVeg?: boolean; // Whether the item is vegetarian
+    isVegan?: boolean; // Whether the item is vegan
+    isBestSeller?: boolean; // Whether the item is a best seller
+    dietaryTags?: string[]; // Optional dietary tags (e.g., "Gluten-Free")
+  };
+  onAddToCart: (item: any) => void; // Function to handle adding the item to the cart
+  persistQuantity?: boolean; // Whether to persist the quantity after adding to the cart
+  fallbackImage?: string; // Fallback image URL if the item's image fails to load
+  addButtonLabel?: string; // Label for the "Add to Cart" button
+  quickAddButtonLabel?: string; // Label for the "Quick Add" button
+  className?: string; // Additional CSS classes for the card
+  theme?: string | number  // Theme of the card
+  size?: 'small' | 'medium' | 'large'; // Size of the card
+  maxDescriptionLines?: number; // Maximum number of lines for the description
+}
+
 
 export default function MenuCard({
   item,
@@ -9,7 +38,6 @@ export default function MenuCard({
   persistQuantity = false,
   fallbackImage = '/fallback-food.jpg',
   addButtonLabel,
-  quickAddButtonLabel,
   className = '',
   theme = 'prehistoric',
   size = 'medium',
@@ -41,14 +69,7 @@ export default function MenuCard({
     }
   };
 
-  const handleQuickAdd = async () => {
-    setIsAdding(true);
-    try {
-      await onAddToCart({ ...item, quantity: 1 });
-    } finally {
-      setIsAdding(false);
-    }
-  };
+ 
 
   const getSpiceIconCount = () => {
     switch (item.spiceLevel) {
@@ -68,7 +89,7 @@ export default function MenuCard({
   };
 
   // Theme-specific styles
-  const themeStyles = {
+  const themeStyles : any = {
     prehistoric: 'bg-black/80 backdrop-blur-sm border-amber-600/50 text-amber-200',
     modern: 'bg-white border-gray-200 text-gray-800',
     minimal: 'bg-gray-100 border-transparent text-gray-700',

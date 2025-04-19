@@ -1,9 +1,7 @@
-import { useState, useEffect, useCallback, memo, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
-import Tilt from 'react-parallax-tilt';
-import MenuCard from '../components/menu/MenuCard';
 
 
 
@@ -54,7 +52,6 @@ const sliderImages: { url: string; alt: string; caption: string }[] = [
 
 
 // Memoized MenuCard
-const MemoizedMenuCard = memo(MenuCard);
 
 export function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -132,12 +129,7 @@ export function Home() {
   }, [isSoundEnabled]);
 
 
-  //@ts-ignore
-  // Add to cart handler
-  const handleAddToCart = useCallback(async (cartItem: CartItem): Promise<void> => {
-    console.log('Added to cart:', cartItem);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-  }, []);
+
 
   return (
     <div
@@ -494,7 +486,9 @@ export function Home() {
         <link rel="preload" href="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920" as="image" />
 
       {/* Styles */}
-<style jsx global>{`
+
+        
+<style jsx  global>{`
   @keyframes electric-pulse {
     0% { opacity: 0; transform: scaleX(0) translateX(-10px); }
     50% { opacity: 1; transform: scaleX(1.2) translateX(0); }
